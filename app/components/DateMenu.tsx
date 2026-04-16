@@ -66,24 +66,22 @@ export const TIMELINE_DATA = [
     ],
   },
   {
-    time: '8:30 PM',
-    description: 'End the night with something sweet',
+    time: '6:00 PM',
+    description: 'Night activities',
     options: [
       {
-        id: 'gelato',
-        emoji: '🍦',
-        title: 'Gelato Lab',
-        description: 'Handmade gelato, endless flavors',
-        imageUrl:
-          'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=300&fit=crop',
+        id: 'dinner-movie',
+        emoji: '🎬',
+        title: 'Dinner + Movie',
+        description: 'Couple dinner and movies night for chilling?',
+        imageUrl: '/images/dinner-movie.svg',
       },
       {
-        id: 'cinema',
-        emoji: '🎬',
-        title: 'Cinema Paradiso',
-        description: 'A good film to wrap the night',
-        imageUrl:
-          'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&h=300&fit=crop',
+        id: 'night-walk',
+        emoji: '🌙',
+        title: 'Ăn vặt + Dạo đêm???',
+        description: 'Bất kì hoạt động nào 😊',
+        imageUrl: '/images/night-walk.svg',
       },
     ],
   },

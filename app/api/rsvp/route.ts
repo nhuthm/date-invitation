@@ -5,7 +5,7 @@ const TIMELINE_LABELS = [
   { time: '12:30 PM', label: 'Lunch', options: ['Fuji Kitchen', 'The B6'] },
   { time: '2:30 PM', label: 'Adventure', options: ['Đi Tô Tượng', 'Đi Vẽ Tranh'] },
   { time: '4:30 PM', label: 'Sweet', options: ['Bingsu', 'Another Bake Shop'] },
-  { time: '8:30 PM', label: 'Dessert', options: ['Gelato Lab', 'Cinema Paradiso'] },
+  { time: '6:00 PM', label: 'Night', options: ['Dinner + Movie', 'Ăn vặt + Dạo đêm'] },
 ];
 
 export async function POST(req: Request) {

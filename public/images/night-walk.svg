@@ -1,0 +1,48 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#2c2848"/>
+  <!-- Moon -->
+  <circle cx="330" cy="60" r="30" fill="#ffe9a0"/>
+  <circle cx="342" cy="52" r="24" fill="#2c2848"/>
+  <!-- Stars -->
+  <circle cx="60" cy="40" r="2" fill="#fff" opacity="0.7"/>
+  <circle cx="120" cy="25" r="1.5" fill="#fff" opacity="0.5"/>
+  <circle cx="200" cy="50" r="2" fill="#fff" opacity="0.6"/>
+  <circle cx="260" cy="30" r="1.5" fill="#fff" opacity="0.8"/>
+  <circle cx="150" cy="70" r="1" fill="#fff" opacity="0.4"/>
+  <circle cx="80" cy="80" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="370" cy="100" r="1" fill="#fff" opacity="0.5"/>
+  <circle cx="40" cy="110" r="1.5" fill="#fff" opacity="0.3"/>
+  <!-- Ground / path -->
+  <path d="M0 240 Q100 230 200 240 Q300 250 400 235 L400 300 L0 300 Z" fill="#3d3660"/>
+  <path d="M0 250 Q100 242 200 250 Q300 258 400 248 L400 300 L0 300 Z" fill="#4a4275"/>
+  <!-- Street lanterns -->
+  <rect x="100" y="130" width="4" height="110" rx="2" fill="#8a7eb0"/>
+  <rect x="86" y="125" width="32" height="8" rx="4" fill="#9a8ec0"/>
+  <ellipse cx="102" cy="140" rx="14" ry="10" fill="#ffe9a0" opacity="0.3"/>
+  <circle cx="102" cy="138" r="5" fill="#ffe9a0" opacity="0.8"/>
+  <rect x="280" y="140" width="4" height="100" rx="2" fill="#8a7eb0"/>
+  <rect x="266" y="135" width="32" height="8" rx="4" fill="#9a8ec0"/>
+  <ellipse cx="282" cy="150" rx="14" ry="10" fill="#ffe9a0" opacity="0.3"/>
+  <circle cx="282" cy="148" r="5" fill="#ffe9a0" opacity="0.8"/>
+  <!-- Food stall -->
+  <rect x="160" y="175" width="80" height="55" rx="6" fill="#5a4e80"/>
+  <path d="M150 175 L200 155 L250 175 Z" fill="#6b5e9a"/>
+  <!-- Food items on stall -->
+  <circle cx="180" cy="195" r="8" fill="#f5a060"/>
+  <circle cx="200" cy="193" r="9" fill="#e88060"/>
+  <circle cx="220" cy="195" r="8" fill="#f5c060"/>
+  <!-- Steam -->
+  <path d="M185 183 Q188 175 185 168" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M200 180 Q203 172 200 164" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M215 183 Q218 175 215 168" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <!-- Couple silhouette walking -->
+  <circle cx="55" cy="200" r="8" fill="#6b5e9a"/>
+  <path d="M55 208 L55 235 M48 218 L62 218 M55 235 L48 250 M55 235 L62 250" stroke="#6b5e9a" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="72" cy="203" r="7" fill="#7b6ea0"/>
+  <path d="M72 210 L72 234 M66 220 L78 220 M72 234 L66 248 M72 234 L78 248" stroke="#7b6ea0" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Hearts between couple -->
+  <path d="M63 195 c0-3 -4-5 -4-2.5 c0 2.5 4 5 4 5 c0 0 4-2.5 4-5 c0-2.5 -4 0 -4 2.5z" fill="#e8a0b0" opacity="0.7"/>
+  <!-- Light glow from lanterns on ground -->
+  <ellipse cx="102" cy="242" rx="25" ry="6" fill="#ffe9a0" opacity="0.1"/>
+  <ellipse cx="282" cy="245" rx="25" ry="6" fill="#ffe9a0" opacity="0.1"/>
+</svg>
