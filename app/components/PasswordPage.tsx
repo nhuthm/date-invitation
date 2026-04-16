@@ -101,7 +101,7 @@ export function PasswordPage({ onSuccess }: PasswordPageProps) {
             animate={{ opacity: 1 }}
             className="error"
           >
-            That&apos;s not it, love. Think about us.
+            Passcode related to your special date
           </motion.p>
         )}
 
