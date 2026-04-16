@@ -30,20 +30,18 @@ export const TIMELINE_DATA = [
     description: 'Then, a little adventure',
     options: [
       {
-        id: 'coffee',
-        emoji: '☕',
-        title: 'The Roastery',
-        description: 'Coffee and people-watching',
-        imageUrl:
-          'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=300&fit=crop',
+        id: 'to-tuong',
+        emoji: '📚',
+        title: 'Đi Tô Tượng',
+        description: 'Nhà sách Hải An',
+        imageUrl: '/images/to-tuong.png',
       },
       {
-        id: 'garden',
-        emoji: '🌿',
-        title: 'Botanical Garden',
-        description: 'A quiet walk together',
-        imageUrl:
-          'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=300&fit=crop',
+        id: 've-tranh',
+        emoji: '🎨',
+        title: 'Đi Vẽ Tranh',
+        description: 'Workshop Ngồi Vẽ Giữa Đời - 91 Lý Tự Trọng, Quận 1',
+        imageUrl: '/images/ve-tranh.png',
       },
     ],
   },
