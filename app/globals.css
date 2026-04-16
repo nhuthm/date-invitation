@@ -9,22 +9,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #faf7f5;
   color: #222;
-  padding: 24px;
-}
-
-main {
-  width: 100%;
-  max-width: 520px;
-  text-align: center;
 }
 
 h1 {
@@ -39,42 +25,313 @@ p {
   margin: 0;
 }
 
-.buttons {
+/* ── Page wrappers ── */
+
+.page-centered {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 
-button {
-  padding: 14px 20px;
-  font-size: 1rem;
+.page-centered main {
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+.page-timeline {
+  min-height: 100vh;
+}
+
+/* ── Password Page ── */
+
+.pin-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.pin-inputs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.pin-input {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
   font-family: inherit;
   border-radius: 10px;
   border: 1px solid #ddd;
   background: white;
-  color: inherit;
-  cursor: pointer;
-  transition: transform 0.1s ease, border-color 0.1s ease, background 0.1s ease;
+  color: #222;
+  outline: none;
+  transition: border-color 0.15s ease;
 }
 
-button:hover:not(:disabled) {
+.pin-input:focus {
+  border-color: #888;
+}
+
+.pin-input.pin-error {
+  border-color: #c00;
+  color: #c00;
+}
+
+.unlock-btn {
+  width: 100%;
+  max-width: 280px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #222;
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.1s ease;
+}
+
+.unlock-btn:hover {
   border-color: #888;
   transform: translateY(-1px);
 }
 
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.thanks {
-  font-size: 1.15rem;
-  margin-top: 16px;
+.unlock-btn:active {
+  transform: translateY(0);
 }
 
 .error {
   color: #c00;
-  margin-top: 16px;
   font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0 24px;
+}
+
+/* ── Timeline Page ── */
+
+.timeline-page {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 48px 24px 120px;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 11px;
+  top: 10px;
+  bottom: 0;
+  width: 1px;
+  background: #ddd;
+}
+
+.timeline-block {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 40px;
+}
+
+.timeline-block:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 7.5px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #222;
+  box-shadow: 0 0 0 4px #faf7f5;
+}
+
+.timeline-block-header {
+  margin-bottom: 16px;
+}
+
+.timeline-time {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 2px;
+}
+
+.timeline-desc {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.timeline-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Timeline Card ── */
+
+.timeline-card {
+  position: relative;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-card:hover {
+  border-color: #888;
+}
+
+.timeline-card-selected {
+  border-color: #222;
+  box-shadow: 0 0 0 1px #222;
+}
+
+.timeline-card-check {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-card-check svg {
+  stroke: #222;
+}
+
+.timeline-card-image {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+}
+
+.timeline-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.timeline-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: black;
+  transition: opacity 0.2s ease;
+}
+
+.timeline-card-content {
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.timeline-card-emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.timeline-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 2px;
+}
+
+.timeline-card-desc {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Suggestion Input ── */
+
+.timeline-suggestion {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #555;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.timeline-suggestion:focus {
+  border-color: #888;
+}
+
+.timeline-suggestion::placeholder {
+  color: #aaa;
+}
+
+/* ── Sticky Confirm Button ── */
+
+.timeline-sticky-btn {
+  position: fixed;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.confirm-btn {
+  width: 100%;
+  max-width: 520px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.1s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.confirm-btn:hover {
+  transform: translateY(-1px);
+}
+
+.confirm-btn:active {
+  transform: translateY(0);
 }
