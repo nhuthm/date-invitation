@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const LABELS: Record<string, string> = {
-  yes: "Yes, I'd love to",
-  maybe: 'Maybe — let me think about it',
-  no: 'No, thanks',
-};
+const TIMELINE_LABELS = [
+  { time: '12:30 PM', label: 'Lunch', options: ['Pho街', 'Sushi Ko'] },
+  { time: '2:30 PM', label: 'Adventure', options: ['The Roastery', 'Botanical Garden'] },
+  { time: '6:00 PM', label: 'Dinner', options: ['La Petite', 'Trattoria Mia'] },
+  { time: '8:30 PM', label: 'Dessert', options: ['Gelato Lab', 'Cinema Paradiso'] },
+];
 
 export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY;
@@ -19,34 +20,42 @@ export async function POST(req: Request) {
     );
   }
 
-  let body: { choice?: unknown; name?: unknown };
+  let body: { selections?: Record<string, number>; suggestions?: Record<string, string> };
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: 'Invalid JSON.' }, { status: 400 });
   }
 
-  const choice = typeof body.choice === 'string' ? body.choice : '';
-  const rawName = typeof body.name === 'string' ? body.name : '';
-  const name = rawName.slice(0, 80).trim();
+  const selections = body.selections ?? {};
+  const suggestions = body.suggestions ?? {};
 
-  if (!(choice in LABELS)) {
-    return NextResponse.json({ error: 'Invalid choice.' }, { status: 400 });
-  }
+  const lines = TIMELINE_LABELS.map((block, i) => {
+    const key = String(i);
+    if (key in selections) {
+      const optionName = block.options[selections[key]] ?? 'Unknown';
+      return `${block.time} — ${block.label}: ${optionName}`;
+    }
+    if (key in suggestions && suggestions[key].trim()) {
+      return `${block.time} — ${block.label}: "${suggestions[key].trim()}" (custom suggestion)`;
+    }
+    return `${block.time} — ${block.label}: No selection`;
+  });
 
-  const label = LABELS[choice];
-  const who = name || 'Someone';
   const when = new Date().toISOString();
 
   const resend = new Resend(apiKey);
   const result = await resend.emails.send({
     from,
     to,
-    subject: `Date invitation RSVP: ${label} — from ${who}`,
+    subject: `Date Plan Confirmed! 🎉`,
     text: [
-      `${who} responded to your invitation.`,
+      `Someone has confirmed the date plan!`,
       '',
-      `Answer: ${label}`,
+      `Here are their picks:`,
+      '',
+      ...lines,
+      '',
       `Received: ${when}`,
     ].join('\n'),
   });
@@ -59,6 +68,6 @@ export async function POST(req: Request) {
     );
   }
 
-  console.log('[rsvp]', { choice, name: who, when });
+  console.log('[rsvp]', { selections, suggestions, when });
   return NextResponse.json({ ok: true });
 }

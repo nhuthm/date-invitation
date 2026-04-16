@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TimelineCard } from './TimelineCard';
 
-const TIMELINE_DATA = [
+export const TIMELINE_DATA = [
   {
     time: '12:30 PM',
     description: "First, let's grab lunch",
@@ -95,9 +95,14 @@ const TIMELINE_DATA = [
   },
 ];
 
-export function DateMenu() {
+interface DateMenuProps {
+  onSubmit: (selections: Record<number, number>, suggestions: Record<number, string>) => void;
+}
+
+export function DateMenu({ onSubmit }: DateMenuProps) {
   const [selections, setSelections] = useState<Record<number, number>>({});
   const [suggestions, setSuggestions] = useState<Record<number, string>>({});
+  const [submitting, setSubmitting] = useState(false);
 
   const handleSelect = (blockIndex: number, optionIndex: number) => {
     setSelections((prev) => {
@@ -129,9 +134,19 @@ export function DateMenu() {
     }
   };
 
-  const hasAnyChoice =
-    Object.keys(selections).length > 0 ||
-    Object.values(suggestions).some((s) => s.trim());
+  const hasAllChoices = TIMELINE_DATA.every((_, i) => {
+    return selections[i] !== undefined || (suggestions[i] ?? '').trim().length > 0;
+  });
+
+  const handleSubmit = async () => {
+    if (!hasAllChoices || submitting) return;
+    setSubmitting(true);
+    try {
+      await onSubmit(selections, suggestions);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <motion.div
@@ -189,7 +204,7 @@ export function DateMenu() {
       </div>
 
       <AnimatePresence>
-        {hasAnyChoice && (
+        {hasAllChoices && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -197,7 +212,13 @@ export function DateMenu() {
             transition={{ type: 'spring', stiffness: 400, damping: 30 }}
             className="timeline-sticky-btn"
           >
-            <button className="confirm-btn">Sounds perfect</button>
+            <button
+              className="confirm-btn"
+              onClick={handleSubmit}
+              disabled={submitting}
+            >
+              {submitting ? 'Sending...' : 'Sounds perfect'}
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
