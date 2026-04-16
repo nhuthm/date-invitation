@@ -71,7 +71,7 @@ export function PasswordPage({ onSuccess }: PasswordPageProps) {
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      <h1>Hey, babe <span className="heading-hearts">&#x1F9E1;&#x1F9E1;</span></h1>
+      <h1>Hello Em B&#xE9; <span className="heading-hearts">&#x1F9E1;</span></h1>
       <p>I made something for you. Enter our special day to peek inside.</p>
 
       <motion.div
