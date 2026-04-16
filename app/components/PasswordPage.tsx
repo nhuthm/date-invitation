@@ -71,8 +71,8 @@ export function PasswordPage({ onSuccess }: PasswordPageProps) {
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      <h1>Hey you,</h1>
-      <p>Enter the magic number to continue</p>
+      <h1>Hey, babe <span className="heading-hearts">&#x1F9E1;&#x1F9E1;</span></h1>
+      <p>I made something for you. Enter our special day to peek inside.</p>
 
       <motion.div
         animate={isError ? { x: [-2, 4, -6, 6, -4, 2, 0] } : {}}
@@ -101,7 +101,7 @@ export function PasswordPage({ onSuccess }: PasswordPageProps) {
             animate={{ opacity: 1 }}
             className="error"
           >
-            Hmm, that&apos;s not it. Try again.
+            That&apos;s not it, love. Think about us.
           </motion.p>
         )}
 

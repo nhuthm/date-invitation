@@ -53,7 +53,7 @@ export function SuccessPage() {
         transition={{ delay: 0.45, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="success-heading"
       >
-        It&apos;s a date!
+        Yay, it&apos;s a date! &#x1F389;
       </motion.h1>
 
       {/* Subtext */}
@@ -63,7 +63,9 @@ export function SuccessPage() {
         transition={{ delay: 0.6, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="success-subtext"
       >
-        Your picks have been saved. I can&apos;t wait to see you!
+        Your picks are locked in and I&apos;m already counting down.
+        <br />
+        Get ready for the best Sunday ever!
       </motion.p>
 
       {/* Decorative divider */}
@@ -81,7 +83,7 @@ export function SuccessPage() {
         transition={{ delay: 1.1, duration: 0.8 }}
         className="success-footer"
       >
-        See you soon ✨
+        See you this Sunday, babe &#x1F9E1;
       </motion.p>
     </motion.div>
   );

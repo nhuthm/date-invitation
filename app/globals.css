@@ -45,6 +45,13 @@ p {
   min-height: 100vh;
 }
 
+.heading-hearts {
+  display: inline-block;
+  font-size: 1.4rem;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
 /* ── Password Page ── */
 
 .pin-section {
