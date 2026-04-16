@@ -17,12 +17,11 @@ export const TIMELINE_DATA = [
         imageUrl: '/images/fuji-kitchen.png',
       },
       {
-        id: 'sushi',
-        emoji: '🍣',
-        title: 'Sushi Ko',
-        description: 'Fresh rolls, cozy spot',
-        imageUrl:
-          'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&h=300&fit=crop',
+        id: 'the-b6',
+        emoji: '🍙',
+        title: 'The B6',
+        description: '157/28D Nguyễn Gia Trí, Bình Thạnh',
+        imageUrl: '/images/the-b6.png',
       },
     ],
   },
