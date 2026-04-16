@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 const TIMELINE_LABELS = [
-  { time: '12:30 PM', label: 'Lunch', options: ['Pho街', 'Sushi Ko'] },
+  { time: '12:30 PM', label: 'Lunch', options: ['Fuji Kitchen', 'Sushi Ko'] },
   { time: '2:30 PM', label: 'Adventure', options: ['The Roastery', 'Botanical Garden'] },
   { time: '6:00 PM', label: 'Dinner', options: ['La Petite', 'Trattoria Mia'] },
   { time: '8:30 PM', label: 'Dessert', options: ['Gelato Lab', 'Cinema Paradiso'] },

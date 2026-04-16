@@ -10,12 +10,11 @@ export const TIMELINE_DATA = [
     description: "First, let's grab lunch",
     options: [
       {
-        id: 'pho',
-        emoji: '🍜',
-        title: 'Pho街',
-        description: 'Warm bowls and good vibes',
-        imageUrl:
-          'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&h=300&fit=crop',
+        id: 'fuji',
+        emoji: '🍱',
+        title: 'Fuji Kitchen',
+        description: '10 Trần Hữu Trang, quận Phú Nhuận',
+        imageUrl: '/images/fuji-kitchen.png',
       },
       {
         id: 'sushi',
