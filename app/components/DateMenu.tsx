@@ -46,24 +46,22 @@ export const TIMELINE_DATA = [
     ],
   },
   {
-    time: '6:00 PM',
-    description: 'Dinner, somewhere special',
+    time: '4:30 PM',
+    description: 'Getting some sweet',
     options: [
       {
-        id: 'french',
-        emoji: '🍷',
-        title: 'La Petite',
-        description: 'Candlelight and French cuisine',
-        imageUrl:
-          'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop',
+        id: 'bingsu',
+        emoji: '🍧',
+        title: 'Bingsu',
+        description: 'Boulevard - 25 Hồ Tùng Mậu, Quận 1',
+        imageUrl: '/images/bingsu.png',
       },
       {
-        id: 'italian',
-        emoji: '🍝',
-        title: 'Trattoria Mia',
-        description: 'Homestyle Italian, warm and cozy',
-        imageUrl:
-          'https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=400&h=300&fit=crop',
+        id: 'another-bake-shop',
+        emoji: '🍰',
+        title: 'Another Bake Shop',
+        description: '25/25 Nguyễn Bỉnh Khiêm, Quận 1',
+        imageUrl: '/images/another-bake-shop.png',
       },
     ],
   },

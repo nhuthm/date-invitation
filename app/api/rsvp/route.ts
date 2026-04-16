@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 const TIMELINE_LABELS = [
   { time: '12:30 PM', label: 'Lunch', options: ['Fuji Kitchen', 'The B6'] },
   { time: '2:30 PM', label: 'Adventure', options: ['Đi Tô Tượng', 'Đi Vẽ Tranh'] },
-  { time: '6:00 PM', label: 'Dinner', options: ['La Petite', 'Trattoria Mia'] },
+  { time: '4:30 PM', label: 'Sweet', options: ['Bingsu', 'Another Bake Shop'] },
   { time: '8:30 PM', label: 'Dessert', options: ['Gelato Lab', 'Cinema Paradiso'] },
 ];
 
